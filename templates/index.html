@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.socket.io/4.7.1/socket.io.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Multiplayer Web App</h1>
+    <div id="chat-box">
+        <p id="messages"></p>
+    </div>
+    <div>
+        <input type="text" id="user-input" placeholder="Change Username">
+    </div>
+    <input type="text" id="message-input" placeholder="Type a message...">
+
+    <div id="container">
+        <div id="player1" class="player"></div>
+        <div id="player2" class="player"></div>
+    </div>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="app.js"></script>    
+    
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
