@@ -54,8 +54,8 @@ export class MainMenu extends Scene
             this.logoTween = this.tweens.add({
                 targets: this.logo,
                 // x: { value: 0, duration: 1000, ease: 'Back.easeInOut' },
-                y: { value: 300, duration: 1000, ease: 'Bounce.easeOut' },
-                yoyo: true,
+                y: { value: 300, duration: 1000, ease: 'Bounce' },
+                // yoyo: true,
                 repeat: 0,
                 onComplete: () => {
                     // Reset the position to the start of the animation
