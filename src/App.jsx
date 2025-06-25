@@ -54,7 +54,7 @@ function App() {
             let radius = 20 + Math.random() * 80;
             //  `add.sprite` is a Phaser GameObjectFactory method and it returns a Sprite Game Object instance
             const container = scene.add.container(centerX, centerY);
-            const star = scene.add.sprite(0, 0, 'star');
+            const star = scene.add.sprite(-20, -20, 'star');
             // const man = scene.add.sprite(centerX, centerY, 'man')
             // container.add(star);
 
@@ -82,6 +82,17 @@ function App() {
         }
     }
 
+    const addSprite2 = () => {
+
+        const scene = phaserRef.current.scene;
+
+        if (scene) {
+            const star = scene.add.sprite(0, 0, 'star');
+            star.setScale(20);
+
+        }
+    }
+
     // Event emitted from the PhaserGame component
     const currentScene = (scene) => {
 
@@ -104,6 +115,9 @@ function App() {
                 </div>
                 <div>
                     <button className="button" onClick={addSprite}>Add New Sprite</button>
+                </div>
+                <div>
+                    <button className="button" onClick={addSprite2}>2nd Add New Sprite</button>
                 </div>
             </div>
         </div>

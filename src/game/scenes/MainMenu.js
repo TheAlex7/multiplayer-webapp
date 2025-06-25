@@ -16,12 +16,23 @@ export class MainMenu extends Scene
 
         this.logo = this.add.image(512, -100, 'logo').setDepth(100);
 
-        this.add.text(512, 460, 'Main Menu', {
+        const menubtn = this.add.text(512, 460, 'Main Menu', {
             fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
             stroke: '#000000', strokeThickness: 8,
             align: 'center'
         }).setDepth(100).setOrigin(0.5);
-        
+
+        menubtn.setInteractive();
+
+        menubtn.on('pointerdown', () => {
+            menubtn.setStyle({ fill: '#ff0' }); // Change text color on click
+        });
+
+        menubtn.on('pointerup', () => {
+            menubtn.setStyle({ fill: '#fff' }); // Reset text color on release
+            // this.changeScene();
+        });
+
         EventBus.emit('current-scene-ready', this);
     }
 
